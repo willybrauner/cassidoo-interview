@@ -14,3 +14,10 @@ services:
     command: sh -c "FORCE_COLOR=1 bun test --watch"
     volumes:
       - ./:/app
+
+  scaffold:
+    image: oven/bun:latest
+    working_dir: /app
+    command: sh -c "bun scripts/scaffold.ts ${NAME}"
+    volumes:
+      - ./:/app

@@ -1,8 +1,12 @@
 {
   "name": "cassidoo-interview",
-  "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "scaffold": "bun scripts/scaffold.ts",
+    "test": "bun test questions/",
+    "test:watch": "bun test --watch questions/"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

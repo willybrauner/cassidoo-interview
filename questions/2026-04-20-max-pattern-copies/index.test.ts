@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test"
-import { maxPatternCopies } from "."
+import { maxPatternCopies } from "./index.ts"
 
 describe("maxPatternCopies", () => {
 
