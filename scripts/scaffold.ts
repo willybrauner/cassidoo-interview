@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 /**
  * Usage: bun new <exercise-name>
- * Creates questions/YYYY-MM-DD-<exercise-name>/{index.ts,index.test.ts}
+ * Creates exercices/YYYY-MM-DD-<exercise-name>/{index.ts,index.test.ts}
  */
 
 const name = Bun.argv[2]
@@ -13,7 +13,7 @@ if (!name) {
 
 const slug = name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")
 const date = new Date().toISOString().slice(0, 10)
-const dir = `questions/${date}-${slug}`
+const dir = `exercices/${date}-${slug}`
 
 if (await Bun.file(`${dir}/index.ts`).exists()) {
   console.error(`Already exists: ${dir}`)

@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "scaffold": "bun scripts/scaffold.ts",
-    "test": "bun test questions/",
-    "test:watch": "bun test --watch questions/"
+    "test": "bun test exercices/",
+    "test:watch": "bun test --watch exercices/",
+    "check": "bunx tsc --noEmit"
   },
   "devDependencies": {
     "@types/bun": "latest"

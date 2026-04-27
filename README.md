@@ -17,17 +17,23 @@ docker compose up bun
 docker compose up test
 ```
 
-## Exercises
+## Exercices
 
 ```bash
-# create a new exercise
+# Create a new exercice
 NAME="two sum" docker compose run --rm scaffold
-# → questions/YYYY-MM-DD-two-sum/index.ts
-# → questions/YYYY-MM-DD-two-sum/index.test.ts
+# → exercices/YYYY-MM-DD-two-sum/index.ts
+# → exercices/YYYY-MM-DD-two-sum/index.test.ts
 
-# run a specific exercise
-docker compose run --rm test bun test questions/YYYY-MM-DD-two-sum
-
-# run all tests
+# Run all tests
 docker compose up test
+
+# Run a specific exercice tests (watch)
+EXERCICE=YYYY-MM-DD-two-sum docker compose up test
+
+# Type-check the whole project
+docker compose run --rm check
+
+# Type-check a specific exercice
+EXERCICE=YYYY-MM-DD-two-sum docker compose run --rm check
 ```

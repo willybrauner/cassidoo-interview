@@ -11,7 +11,14 @@ services:
     image: oven/bun:latest
     hostname: test
     working_dir: /app
-    command: sh -c "FORCE_COLOR=1 bun test --watch"
+    command: sh -c "FORCE_COLOR=1 bun test --watch ${EXERCICE:-exercices/}"
+    volumes:
+      - ./:/app
+
+  check:
+    image: oven/bun:latest
+    working_dir: /app
+    command: sh -c "bunx tsc --noEmit ${EXERCICE:+exercices/$EXERCICE/index.ts exercices/$EXERCICE/index.test.ts}"
     volumes:
       - ./:/app
 
